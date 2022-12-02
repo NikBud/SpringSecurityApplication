@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Здравствуйте, <span th:text="${principal.getPerson().getNameSurname()}">VALUE</span></h1>
+
+<h2>Информация о вас: </h2>
+<span>Ваш ID в базе данных: </span><span th:text="${principal.getPerson().getId()}">ID</span> <br/>
+<span>Вашe имя и фамилия: </span><span th:text="${principal.getPerson().getNameSurname()}">NameSurname</span> <br/>
+<span>Ваш год рождения: </span><span th:text="${principal.getPerson().getYearOfBirth()}">YearOfBirth</span> <br/>
+<br/>
+
+
+<form th:action="@{/logout}" th:method="POST">
+    <input type="submit" value="Logout!" />
+</form>
+
+
+</body>
+</html>
